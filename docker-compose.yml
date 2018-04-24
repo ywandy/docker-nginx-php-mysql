@@ -7,8 +7,10 @@ services:
             - "./etc/ssl:/etc/ssl"
             - "./web:/var/www/html"
             - "./etc/nginx/default.template.conf:/etc/nginx/conf.d/default.template"
+            - "./data/log/container_nginx:/var/log/"
         ports:
             - "8000:80"
+            - "8001:81"
             - "3000:443"
         environment:
             - NGINX_HOST=${NGINX_HOST}
